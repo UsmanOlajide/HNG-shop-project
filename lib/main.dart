@@ -21,9 +21,8 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        // home: const CartScreen(),
         routes: {
-          '/': (context) => const Tabs(),
+          '/': (context) => const Home(),
           OrderSuccessfulScreen.orderScreen: (context) =>
               const OrderSuccessfulScreen(),
         },

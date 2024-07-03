@@ -17,7 +17,7 @@ class CartSummary extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text('Subtotal'),
-                  Text(controller.subtotalCost()),
+                  Text(controller.subtotalPrice()),
                 ],
               ),
               const SizedBox(height: 8.0),
@@ -33,7 +33,7 @@ class CartSummary extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text('Total'),
-                  Text(controller.totalCost()),
+                  Text(controller.subtotalPrice()),
                 ],
               ),
               const SizedBox(height: 8.0),

@@ -4,13 +4,13 @@ import 'package:quickshop/screens/productscreen.dart';
 
 const _tabs = [Productscreen(), CartScreen()];
 
-class Tabs extends StatefulWidget {
-  const Tabs({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
   @override
-  State<Tabs> createState() => _TabsState();
+  State<Home> createState() => _HomeState();
 }
 
-class _TabsState extends State<Tabs> {
+class _HomeState extends State<Home> {
   int _currentIndex = 0;
 
   @override

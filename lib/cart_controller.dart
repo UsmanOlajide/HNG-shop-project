@@ -21,8 +21,7 @@ class CartController extends ChangeNotifier {
 
   void increaseQuantity(Product product) {
     final existingIndex = _cart.indexWhere((item) => item.id == product.id);
-    if (existingIndex == 1) return;
-    _cart[existingIndex].quantity++;
+    if (existingIndex >= 0) _cart[existingIndex].quantity++;
 
     notifyListeners();
   }
@@ -49,22 +48,18 @@ class CartController extends ChangeNotifier {
 
   double get delivery => 20.0;
 
-  double _subtotalCost() {
-    try {
-      return _cart
-          .map((plant) => plant.price)
-          .reduce((prev, next) => prev + next);
-    } catch (e) {
-      return 0.0;
-    }
+  double _subtotalPrice() {
+    final subtotal = _cart.fold(
+        0.0, (sum, product) => sum + product.price * product.quantity);
+    return subtotal;
   }
 
-  String subtotalCost() {
-    return '\$${_subtotalCost().toStringAsFixed(2)}';
+  String subtotalPrice() {
+    return '\$${_subtotalPrice().toStringAsFixed(2)}';
   }
 
-  String totalCost() {
-    return '\$${(_subtotalCost() + delivery).toStringAsFixed(2)}';
+  String totalPrice() {
+    return '\$${(_subtotalPrice() + delivery).toStringAsFixed(2)}';
   }
 }
 
