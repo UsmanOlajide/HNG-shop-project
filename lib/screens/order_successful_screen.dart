@@ -12,7 +12,11 @@ class OrderSuccessfulScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(height: 80.0, child: Image.asset('assets/succ.png')),
+            const Icon(
+              Icons.check_circle,
+              color: Colors.green,
+              size: 80,
+            ),
             const Text(
               'Order Completed',
               style: TextStyle(fontSize: 20),

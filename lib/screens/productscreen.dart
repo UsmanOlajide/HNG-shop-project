@@ -68,9 +68,13 @@ class _ProductscreenState extends State<Productscreen> {
                                           ScaffoldMessenger.of(context)
                                               .showSnackBar(
                                             SnackBar(
-                                              duration: Durations.short4,
+                                              duration: Durations.medium1,
                                               content: Text(
-                                                  'Added ${products[i].title}'),
+                                                controller.isPresent(
+                                                        products[i].id)
+                                                    ? 'Added ${products[i].title}'
+                                                    : 'Removed ${products[i].title}',
+                                              ),
                                             ),
                                           );
                                         },
